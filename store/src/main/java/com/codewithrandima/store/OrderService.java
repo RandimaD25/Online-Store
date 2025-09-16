@@ -1,13 +1,19 @@
 package com.codewithrandima.store;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class OrderService {
 
     private PaymentService paymentService;
 
+    public  OrderService() {}
 //    Constructor
-//    public OrderService(PaymentService paymentService) {
-//        this.paymentService = paymentService;
-//    }
+    @Autowired // As there are multiple contructor
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
 
     public void placeOrder() {
         paymentService.processPayment(10);

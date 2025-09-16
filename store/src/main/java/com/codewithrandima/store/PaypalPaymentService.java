@@ -1,5 +1,8 @@
 package com.codewithrandima.store;
 
+import org.springframework.stereotype.Service;
+
+//@Service
 public class PaypalPaymentService implements PaymentService {
 
     @Override
